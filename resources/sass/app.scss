@@ -1,0 +1,130 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Custom
+@import 'common';
+
+
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+
+#admin_link{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+}
+
+.main-page{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%);
+}
+
+.admin-page .gallery-img-container{
+    .gallery-img, .gallery-img-actions{
+        transition: .3s;
+    }
+
+    &:hover{
+        .gallery-img {
+            filter: grayscale(1);
+            opacity: 0.35;
+        }
+        .gallery-img-actions{
+            opacity: 1;
+            font-size: 2.5rem;
+        }
+    }
+
+    .gallery-img-actions{
+        opacity: 0;
+    }
+}
+
+.gallery-img-actions{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    font-size: 2rem;
+    transform: translateY(-50%);
+
+    .fa-eye{
+        color: $success;
+    }
+
+    .fa-eye-slash{
+        color: $dark;
+    }
+
+    .fa-trash-can{
+        color: $danger;
+    }
+}
+
+#upload_btn_container{
+    #upload_icon{
+        font-size: 3rem;
+        color: $primary;
+        transition: .3s, transform 1s;
+        opacity: 0.75;
+    }
+
+    &:hover{
+        #upload_icon {
+            opacity: 1;
+            transform: rotate(-4deg);
+        }
+    }
+}
+
+.drag-and-drop{
+    text-align: center;
+    border-radius: 8px;
+    border: dashed black 1px;
+    cursor: pointer;
+    transition: .2s;
+    user-select: none;
+    min-height: 300px;
+    padding-top: 110px;
+    opacity: 0.75;
+
+    &.dragging{
+        border: dashed black 1px;
+        opacity: 1;
+        background-color: transparentize(black, 0.97);
+    }
+
+    &:hover{
+        background-color: transparentize(black, 0.97);
+    }
+
+    & > .drag-and-drop-ext-info{
+        opacity: 0.75;
+        font-size: 1rem;
+    }
+
+    p{
+        font-size: 1.175rem;
+
+        & > span{
+            font-size: 1rem;
+            opacity: 0.75;
+        }
+    }
+
+    & > input{
+        display: none;
+    }
+}
+
+.modal-dialog{
+    max-width: 600px !important;
+}
