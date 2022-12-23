@@ -1,3 +1,21 @@
+##Webex Assignment - Jámbor Máté
+
+Steps to install & run in dev environment:
+1. composer update
+2. npm install
+3. configure DB connection in .env file
+4. use 'php artisan migrate' to create tables
+5. Use 'php artisan tinker' to add a test user manually
+6. npm run dev
+
+Enter this code to tinker's console to create a new user:
+`DB::table('users')->insert(['name'=>'TestAdmin123','email'=>'hello@example.com','password'=>Hash::make('qwerty')])
+`
+
+The simple dashboard is accessible at /admin.
+
+It's recommended to increase post_max_size and upload_max_filesize (if you would like to upload large image files).  
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
